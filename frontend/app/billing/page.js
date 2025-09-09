@@ -4,7 +4,7 @@ import { useState } from "react";
 import { 
 	CurrencyDollarIcon,
 	DocumentTextIcon,
-	DownloadIcon,
+	ArrowDownTrayIcon,
 	EyeIcon,
 	CreditCardIcon,
 	BanknotesIcon,
@@ -13,8 +13,7 @@ import {
 	CheckCircleIcon,
 	ClockIcon,
 	XCircleIcon,
-	ArrowDownTrayIcon,
-	PlusIcon
+	PlusCircleIcon
 } from "@heroicons/react/24/outline";
 
 export default function BillingPage() {
@@ -196,7 +195,7 @@ export default function BillingPage() {
 							<option value="2022">2022</option>
 						</select>
 						<button className="btn-outline px-4 py-2 text-sm">
-							<DownloadIcon className="h-4 w-4 mr-2" />
+							<ArrowDownTrayIcon className="h-4 w-4 mr-2" />
 							Exporter
 						</button>
 					</div>
@@ -348,7 +347,7 @@ export default function BillingPage() {
 														<EyeIcon className="h-4 w-4" />
 													</button>
 													<button className="p-2 text-gray-400 hover:text-afriviral-orange hover:bg-afriviral-orange-50 rounded-xl transition-all duration-200">
-														<DownloadIcon className="h-4 w-4" />
+														<ArrowDownTrayIcon className="h-4 w-4" />
 													</button>
 												</div>
 											</td>
@@ -445,7 +444,7 @@ export default function BillingPage() {
 									</button>
 								</div>
 								<button className="w-full btn-outline py-4 text-lg font-semibold">
-									<PlusIcon className="h-5 w-5 mr-2" />
+									<PlusCircleIcon className="h-5 w-5 mr-2" />
 									Ajouter un Moyen de Paiement
 								</button>
 							</div>

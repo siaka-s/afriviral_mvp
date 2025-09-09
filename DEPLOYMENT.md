@@ -261,3 +261,5 @@ npm run dev
 ---
 
 **🎉 Félicitations ! Votre plateforme AfriViral est maintenant déployée sur Vercel !**
+
+

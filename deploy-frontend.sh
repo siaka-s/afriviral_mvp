@@ -69,3 +69,5 @@ echo ""
 echo "🔗 Liens utiles :"
 echo "   - Vercel Dashboard: https://vercel.com/dashboard"
 echo "   - GitHub Repository: https://github.com/VOTRE-USERNAME/afriviral-mvp"
+
+

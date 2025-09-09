@@ -1,7 +1,7 @@
 {
   "name": "afriviral-backend",
   "version": "1.0.0",
-  "description": "Backend API for AfriViral - Plateforme de marketing d\'influence",
+  "description": "Backend API for AfriViral - Plateforme de marketing d'influence",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
