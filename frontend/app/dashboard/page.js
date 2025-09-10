@@ -55,28 +55,28 @@ const StatCard = ({ title, value, subtitle, icon: Icon, trend, color = "blue" })
 		<motion.div
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
-			className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+			className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300"
 		>
 			<div className="flex items-center justify-between">
-				<div>
-					<p className="text-sm font-medium text-gray-600 mb-1">{title}</p>
-					<p className="text-3xl font-bold text-gray-900">{value}</p>
+				<div className="flex-1 min-w-0">
+					<p className="text-xs sm:text-sm font-medium text-gray-600 mb-1 truncate">{title}</p>
+					<p className="text-2xl sm:text-3xl font-bold text-gray-900 truncate">{value}</p>
 					{subtitle && (
-						<p className="text-sm text-gray-500 mt-1">{subtitle}</p>
+						<p className="text-xs sm:text-sm text-gray-500 mt-1 truncate">{subtitle}</p>
 					)}
 				</div>
-				<div className={`p-3 rounded-xl ${colorClasses.bg}`}>
-					<Icon className={`h-6 w-6 ${colorClasses.text}`} />
+				<div className={`p-2 sm:p-3 rounded-lg sm:rounded-xl ${colorClasses.bg} flex-shrink-0 ml-2`}>
+					<Icon className={`h-5 w-5 sm:h-6 sm:w-6 ${colorClasses.text}`} />
 				</div>
 			</div>
 			{trend && (
-				<div className={`flex items-center mt-3 text-sm ${
+				<div className={`flex items-center mt-2 sm:mt-3 text-xs sm:text-sm ${
 					trend > 0 ? "text-green-600" : "text-red-600"
 				}`}>
 					{trend > 0 ? (
-						<ArrowUpIcon className="h-4 w-4 mr-1" />
+						<ArrowUpIcon className="h-3 w-3 sm:h-4 sm:w-4 mr-1" />
 					) : (
-						<ArrowDownIcon className="h-4 w-4 mr-1" />
+						<ArrowDownIcon className="h-3 w-3 sm:h-4 sm:w-4 mr-1" />
 					)}
 					{Math.abs(trend)}% vs mois dernier
 				</div>
@@ -142,39 +142,39 @@ export default function DashboardPage() {
 		<div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 				{/* Header */}
-				<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8">
-					<div>
-						<h1 className="text-3xl font-bold text-gray-900 mb-2">
+				<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 sm:mb-8">
+					<div className="mb-4 sm:mb-0">
+						<h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
 							Tableau de Bord
 						</h1>
-						<p className="text-gray-600">
+						<p className="text-sm sm:text-base text-gray-600">
 							Bienvenue sur votre espace AfriViral
 						</p>
 					</div>
 					
 					{/* Type Selector */}
-					<div className="flex items-center gap-4 mt-4 sm:mt-0">
-						<div className="flex bg-gray-100 rounded-xl p-1">
+					<div className="flex items-center gap-2 sm:gap-4">
+						<div className="flex bg-gray-100 rounded-xl p-1 w-full sm:w-auto">
 							<button
 								onClick={() => setUserType("pme")}
-								className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+								className={`flex-1 sm:flex-none px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${
 									userType === "pme"
 										? "bg-white text-blue-600 shadow-sm"
 										: "text-gray-600 hover:text-gray-900"
 								}`}
 							>
-								<BuildingOfficeIcon className="h-4 w-4 inline mr-2" />
+								<BuildingOfficeIcon className="h-3 w-3 sm:h-4 sm:w-4 inline mr-1 sm:mr-2" />
 								PME
 							</button>
 							<button
 								onClick={() => setUserType("influenceur")}
-								className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+								className={`flex-1 sm:flex-none px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${
 									userType === "influenceur"
 										? "bg-white text-orange-600 shadow-sm"
 										: "text-gray-600 hover:text-gray-900"
 								}`}
 							>
-								<UserGroupIcon className="h-4 w-4 inline mr-2" />
+								<UserGroupIcon className="h-3 w-3 sm:h-4 sm:w-4 inline mr-1 sm:mr-2" />
 								Influenceur
 							</button>
 						</div>
@@ -182,7 +182,7 @@ export default function DashboardPage() {
 				</div>
 
 				{/* Stats Overview */}
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-8">
 					{userType === "pme" ? (
 						<>
 							<StatCard
@@ -261,7 +261,7 @@ export default function DashboardPage() {
 					<h3 className="text-lg font-semibold text-gray-900 mb-4">
 						Métriques de Performance
 					</h3>
-					<div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+					<div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
 						<div className="text-center p-4 bg-gray-50 rounded-xl">
 							<EyeIcon className="h-8 w-8 text-blue-600 mx-auto mb-2" />
 							<p className="text-2xl font-bold text-gray-900">
@@ -298,7 +298,7 @@ export default function DashboardPage() {
 					<h3 className="text-lg font-semibold text-gray-900 mb-4">
 						Actions Rapides
 					</h3>
-					<div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
 						<button className="btn-gradient py-4 px-6 rounded-xl text-white font-medium flex items-center justify-center">
 							<PlusIcon className="h-5 w-5 mr-2" />
 							Nouvelle Campagne
